@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dartwala Express</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: url('dartwala_homepage_final_clipart_only.png') no-repeat center center;
+      background-size: cover;
+      background-color: #f0f4f8;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+    .content {
+      padding: 40px;
+      color: #111827;
+      max-width: 700px;
+    }
+    .content h1 {
+      font-size: 2.8rem;
+      font-weight: bold;
+    }
+    .content p {
+      font-size: 1.25rem;
+      margin-top: 0.5rem;
+    }
+    .buttons {
+      margin-top: 1.5rem;
+    }
+    .buttons a {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      margin-right: 10px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: transform 0.3s ease;
+    }
+    .btn-primary {
+      background-color: #2563eb;
+      color: #ffffff;
+    }
+    .btn-secondary {
+      border: 2px solid #2563eb;
+      color: #2563eb;
+      background-color: transparent;
+    }
+    .moving-truck {
+      position: absolute;
+      bottom: 60px;
+      left: -320px;
+      width: 320px;
+      animation: drive 12s linear infinite;
+    }
+    @keyframes drive {
+      0% { left: -320px; }
+      100% { left: 110%; }
+    }
+    .ticker-container {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background: #111827;
+      overflow: hidden;
+      height: 40px;
+      color: white;
+      display: flex;
+      align-items: center;
+      font-size: 16px;
+    }
+    .ticker-text {
+      white-space: nowrap;
+      padding-left: 100%;
+      animation: ticker 20s linear infinite;
+    }
+    @keyframes ticker {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <h1>Delivering Trust. Darting Fast.</h1>
+    <p>India's Personalized Courier Aggregator – Efficient, Transparent & Human-Centered</p>
+    <div class="buttons">
+      <a href="#quote" class="btn-primary">Get a Quote</a>
+      <a href="https://wa.me/919136801619" class="btn-secondary">WhatsApp Us</a>
+    </div>
+  </div>
+
+  <img src="dartwala_truck_flipped_large.png" alt="Dartwala Truck" class="moving-truck">
+
+  <div class="ticker-container">
+    <div class="ticker-text">
+      24-Hour PAN India Express Dispatch &nbsp; | &nbsp; 15+ Courier Partners &nbsp; | &nbsp; 10,000+ Shipments Delivered &nbsp; | &nbsp; Flat 10% OFF for Bulk Bookings &nbsp; | &nbsp; 99.6% On-time Delivery
+    </div>
+  </div>
+</body>
+</html>
