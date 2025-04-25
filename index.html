@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dartwala Express</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: url('final-bg.png') no-repeat center center;
+      background-size: cover;
+      height: 100vh;
+      font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
+    }
+    .header {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+    }
+    .header img {
+      height: 50px;
+    }
+    .content {
+      position: absolute;
+      top: 100px;
+      left: 60px;
+      color: #111827;
+      max-width: 600px;
+      animation: fadeIn 2s ease forwards;
+    }
+    .content h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+    .content p {
+      font-size: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+    .buttons a {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      margin-right: 15px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: transform 0.3s ease, background-color 0.3s;
+    }
+    .buttons a:hover {
+      transform: scale(1.05);
+    }
+    .btn-primary {
+      background-color: #2563eb;
+      color: #ffffff;
+    }
+    .btn-secondary {
+      border: 2px solid #2563eb;
+      color: #2563eb;
+      background-color: transparent;
+    }
+    .truck {
+      position: absolute;
+      bottom: 80px;
+      left: -300px;
+      animation: moveTruck 15s linear infinite;
+    }
+    .ticker {
+      position: absolute;
+      bottom: 0;
+      background-color: #111827;
+      color: white;
+      width: 100%;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .ticker p {
+      animation: scrollText 25s linear infinite;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+    @keyframes moveTruck {
+      0% { left: -300px; }
+      100% { left: 120%; }
+    }
+    @keyframes scrollText {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <img src="logo.png" alt="Dartwala Express Logo" />
+  </div>
+  <div class="content">
+    <h1>Delivering Trust. Darting Fast.</h1>
+    <p>India's Personalized Courier Aggregator – Efficient, Transparent & Human-Centered</p>
+    <div class="buttons">
+      <a href="#quote" class="btn-primary">Get a Quote</a>
+      <a href="https://wa.me/919136801619" class="btn-secondary">WhatsApp Us</a>
+    </div>
+  </div>
+  <img src="new-truck.png" class="truck" alt="Moving Truck" width="200" />
+  <div class="ticker">
+    <p>&nbsp;&nbsp; FAST DELIVERY &nbsp;&nbsp;&nbsp;&nbsp; BULK OFFERS &nbsp;&nbsp;&nbsp;&nbsp; 15+ COURIER PARTNERS &nbsp;&nbsp;&nbsp;&nbsp; 99.6% SUCCESS RATE &nbsp;&nbsp;&nbsp;&nbsp; EXPRESS DISPATCH &nbsp;&nbsp;</p>
+  </div>
+</body>
+</html>
