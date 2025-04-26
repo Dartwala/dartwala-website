@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Courier Enquiry - Dartwala Express</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="form-page">
+    <h1>Courier Enquiry Form</h1>
+    <form action="https://formsubmit.co/info@dartwalaexpress.com" method="POST">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="Name" placeholder="Your Name" required>
+      <input type="tel" name="Contact Number" placeholder="Your Contact Number" required>
+      <input type="text" name="Pickup Pincode" placeholder="Pickup Pincode" required>
+      <input type="text" name="Delivery Pincode" placeholder="Delivery Pincode" required>
+      <input type="text" name="Weight" placeholder="Weight (in kilograms)" required>
+      <input type="text" name="Size" placeholder="Size (in centimeters)" required>
+      <input type="text" name="Content" placeholder="Content Description" required>
+      <select name="Priority" required>
+        <option value="">Select Priority</option>
+        <option value="Normal">Normal</option>
+        <option value="Urgent">Urgent</option>
+        <option value="Critical">Critical</option>
+      </select>
+      <textarea name="Message" placeholder="Additional Message" rows="4"></textarea>
+      <button type="submit">Submit Enquiry</button>
+    </form>
+  </main>
+</body>
+</html>
