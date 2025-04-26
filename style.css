@@ -120,7 +120,7 @@ footer {
   height: 60px;
   width: auto;
   margin: 0 20px;
-  object-fit: contain
+  object-fit: contain;
 }
 
 @keyframes tickerMove {
