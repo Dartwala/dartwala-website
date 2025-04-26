@@ -112,7 +112,8 @@ footer {
 
 .ticker-move {
   display: flex;
-  animation: tickerMove 20s linear infinite;
+  animation: tickerMove 30s linear infinite;
+  gap: 40px;
 }
 
 .ticker-move img {
