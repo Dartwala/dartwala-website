@@ -111,19 +111,20 @@ footer {
 }
 
 .ticker-move {
-  display: flex;
-  animation: tickerMove 25s linear infinite;
+  display: inline-flex;
+  white-space: nowrap;
+  animation: tickerMove 50s linear infinite;
   gap: 20px;
 }
 
 .ticker-move img {
   height: 60px;
-  width: auto;
+  margin: 0 20px;
   object-fit: contain;
 }
 
 @keyframes tickerMove {
-  0% { transform: translateX(100%); }
+  0% { transform: translateX(0%); }
   100% { transform: translateX(-50%); }
 }
 
