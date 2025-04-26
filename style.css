@@ -118,7 +118,7 @@ footer {
 
 .ticker-move img {
   height: 60px;
-  width: 120;
+  width: 120px;
   margin: 0 20px;
   object-fit: cover;
 }
@@ -127,7 +127,4 @@ footer {
   0% { transform: translateX(100%); }
   100% { transform: translateX(-100%); }
 }
-.ticker-move {
-  display: flex;
-  animation: tickerMove 30s linear infinite;
-}
+
