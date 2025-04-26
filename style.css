@@ -113,14 +113,14 @@ footer {
 .ticker-move {
   display: flex;
   animation: tickerMove 30s linear infinite;
-  gap: 40px;
+  gap: 30px;
 }
 
 .ticker-move img {
   height: 60px;
-  width: 120px;
+  width: auto;
   margin: 0 20px;
-  object-fit: cover;
+  object-fit: contain
 }
 
 @keyframes tickerMove {
