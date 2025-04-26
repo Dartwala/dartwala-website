@@ -102,7 +102,7 @@ footer {
 .partner-ticker {
   background-color: #f8f9fa;
   padding: 20px 0;
-  text-align : center;
+  overflow: hidden;
 }
 
 .ticker-wrap {
@@ -112,19 +112,18 @@ footer {
 
 .ticker-move {
   display: flex;
-  animation: tickerMove 30s linear infinite;
-  gap: 30px;
+  animation: tickerMove 25s linear infinite;
+  gap: 20px;
 }
 
 .ticker-move img {
   height: 60px;
   width: auto;
-  margin: 0 20px;
   object-fit: contain;
 }
 
 @keyframes tickerMove {
   0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
+  100% { transform: translateX(-50%); }
 }
 
