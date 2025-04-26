@@ -118,7 +118,8 @@ footer {
 
 .ticker-move img {
   height: 60px;
-  margin-right: 50px;
+  width: auto;
+  margin: 0 20px;
 }
 
 @keyframes tickerMove {
