@@ -14,16 +14,14 @@ header {
   background-color: white;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   padding: 20px;
-  height : 80px;
+  height : 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .logo {
-  height: 700px;
-  max-height : 100%;
-  width : auto;
+  height: 200px;
 }
 
 nav a {
