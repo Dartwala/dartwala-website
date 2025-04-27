@@ -118,26 +118,20 @@
 .track-box button:hover {
   background-color: #0056b3;
 }
-</style><!-- Track Courier Script --><script>
+</style><!-- Track Courier Script --> <script>
 function trackCourier() {
   var courier = document.getElementById('courierSelect').value;
-  var awb = document.getElementById('awbNumber').value.trim();
-
-  if (awb === "") {
-    alert("Please enter a valid AWB number.");
-    return;
-  }
 
   var trackUrl = "";
 
   if (courier === 'dtdc') {
-    trackUrl = 'https://www.dtdc.in/tracking.asp?trackno=' + awb;
+    trackUrl = 'https://www.dtdc.in/tracking.asp';
   } else if (courier === 'bluedart') {
-    trackUrl = 'https://www.bluedart.com/tracking?trackno=' + awb;
+    trackUrl = 'https://www.bluedart.com/tracking';
   } else if (courier === 'delhivery') {
-    trackUrl = 'https://www.delhivery.com/tracking?waybill=' + awb;
+    trackUrl = 'https://www.delhivery.com/tracking';
   } else if (courier === 'trackon') {
-    trackUrl = 'https://www.trackoncourier.com/trackconsignment.aspx?trackingNo=' + awb;
+    trackUrl = 'https://www.trackoncourier.com/trackconsignment.aspx';
   }
 
   if (trackUrl !== "") {
