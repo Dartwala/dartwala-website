@@ -84,8 +84,8 @@
     <h1>Request a Pickup</h1>
     <p>Fill the details below. Our team will reach you!</p>
 
-    <form action="https://formspree.io/f/xyzwzoqb" method="POST" class="form-container">
-      <input type="hidden" name="_next" value="https://dartwala.netlify.app/thankyou.html">
+    <form name="pickup-request" method="POST" 
+     data-netlify="true" action="/thankyou.html" class="form-container">
 
       <div>
         <label>Name</label>
