@@ -1,28 +1,61 @@
-
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Get a Quote - Dartwala Express</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Request Pickup - Dartwala Express</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main class="form-page">
-    <h1>Courier Enquiry Form</h1>
-    <form action="https://formspree.io/f/xdoqgqne" method="POST">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="text" name="Content" placeholder="Content" required>
-      <input type="text" name="Priority" placeholder="Priority (Normal/Urgent/Critical)" required>
-      <input type="text" name="Weight" placeholder="Weight (in kilograms)" required>
-      <input type="text" name="Size" placeholder="Size (in centimeters)" required>
-      <input type="text" name="Pickup Pincode" placeholder="Pickup Pincode" required>
-      <input type="text" name="Delivery Pincode" placeholder="Delivery Pincode" required>
-      <input type="text" name="Name" placeholder="Your Name" required>
-      <input type="text" name="Contact Number" placeholder="Your Contact Number" required>
-      <textarea name="Message" rows="4" placeholder="Additional Message"></textarea>
-      <button type="submit">Submit Enquiry</button>
-    </form>
-  </main>
+  <header>
+    <img src="logo.png" alt="Dartwala Express Logo" class="logo">
+    <nav>
+      <a href="index.html">Home</a>
+    </nav>
+  </header>  <main class="hero">
+    <h1>Request a Pickup</h1>
+    <p>Fill the details below. Our team will reach you!</p><form name="pickup-request" method="POST" data-netlify="true" style="max-width: 500px; margin: 40px auto; background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+  <input type="hidden" name="form-name" value="pickup-request">
+
+  <label>Name</label>
+  <input type="text" name="name" required>
+
+  <label>Email</label>
+  <input type="email" name="email" required>
+
+  <label>Phone Number</label>
+  <input type="tel" name="phone" required>
+
+  <label>Pickup Pincode</label>
+  <input type="text" name="pickup-pincode" required>
+
+  <label>Delivery Pincode</label>
+  <input type="text" name="delivery-pincode" required>
+
+  <label>Parcel Weight (Kg)</label>
+  <input type="number" name="weight" step="0.01" required>
+
+  <label>Parcel Dimensions (cm)</label>
+  <div style="display: flex; gap: 10px;">
+    <input type="number" name="length" placeholder="Length" required>
+    <input type="number" name="breadth" placeholder="Breadth" required>
+    <input type="number" name="height" placeholder="Height" required>
+  </div>
+
+  <label>Priority</label>
+  <select name="priority" required>
+    <option value="Standard">Standard</option>
+    <option value="Urgent">Urgent</option>
+    <option value="Critical Same Day">Critical Same Day</option>
+  </select>
+
+  <label>Message</label>
+  <textarea name="message" rows="4" placeholder="Additional notes..."></textarea>
+
+  <button type="submit" class="btn primary" style="margin-top: 20px;">Submit Request</button>
+</form>
+
+  </main>  <footer>
+    Powered by Supreme Enterprises | GST No: 27CEXPS3188G1ZL | All rights reserved © Dartwala Express 2025
+  </footer>
 </body>
 </html>
