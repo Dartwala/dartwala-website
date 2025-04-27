@@ -1,61 +1,150 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Request Pickup - Dartwala Express</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: #f4f9ff;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .form-container {
+      max-width: 550px;
+      margin: 40px auto;
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .form-container label {
+      font-weight: bold;
+      color: #003366;
+      margin-bottom: 6px;
+    }
+    .form-container input,
+    .form-container select,
+    .form-container textarea {
+      width: 100%;
+      padding: 14px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+    .form-container input:focus,
+    .form-container select:focus,
+    .form-container textarea:focus {
+      border-color: #007bff;
+      outline: none;
+      box-shadow: 0 0 8px rgba(0,123,255,0.3);
+    }
+    .dimensions {
+      display: flex;
+      gap: 10px;
+    }
+    .dimensions input {
+      flex: 1;
+    }
+    .form-container button {
+      background-color: #007bff;
+      color: white;
+      padding: 14px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+    .form-container button:hover {
+      background-color: #0056b3;
+      transform: scale(1.02);
+    }
+    h1, p {
+      text-align: center;
+      color: #001d3d;
+    }
+  </style>
 </head>
+
 <body>
   <header>
     <img src="logo.png" alt="Dartwala Express Logo" class="logo">
     <nav>
       <a href="index.html">Home</a>
     </nav>
-  </header>  <main class="hero">
+  </header>
+
+  <main class="hero">
     <h1>Request a Pickup</h1>
-    <p>Fill the details below. Our team will reach you!</p><form action="https://formspree.io/f/xyzwzoqb" method="POST" style="max-width: 500px; margin: 40px auto; background: #ffffff; padding: 40px 30px; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.1);">
+    <p>Fill the details below. Our team will reach you!</p>
 
-  <label style="display: block; margin-bottom: 8px;">Name</label>
-  <input type="text" name="name" required style="width: 100%; padding: 12px; margin-bottom: 20px; border-radius: 8px; border: 1px solid #ccc;">
+    <form name="pickup-request" method="POST" action="thankyou.html" class="form-container">
+      <input type="hidden" name="form-name" value="pickup-request">
 
-  <label style="display: block; margin-bottom: 8px;">Email</label>
-  <input type="email" name="email" required style="width: 100%; padding: 12px; margin-bottom: 20px; border-radius: 8px; border: 1px solid #ccc;">
+      <div>
+        <label>Name</label>
+        <input type="text" name="name" required>
+      </div>
 
-  <label style="display: block; margin-bottom: 8px;">Phone Number</label>
-  <input type="tel" name="phone" required style="width: 100%; padding: 12px; margin-bottom: 20px; border-radius: 8px; border: 1px solid #ccc;">
+      <div>
+        <label>Email</label>
+        <input type="email" name="email" required>
+      </div>
 
-  <label style="display: block; margin-bottom: 8px;">Pickup Pincode</label>
-  <input type="text" name="pickup-pincode" required style="width: 100%; padding: 12px; margin-bottom: 20px; border-radius: 8px; border: 1px solid #ccc;">
+      <div>
+        <label>Phone Number</label>
+        <input type="tel" name="phone" required>
+      </div>
 
-  <label style="display: block; margin-bottom: 8px;">Delivery Pincode</label>
-  <input type="text" name="delivery-pincode" required style="width: 100%; padding: 12px; margin-bottom: 20px; border-radius: 8px; border: 1px solid #ccc;">
+      <div>
+        <label>Pickup Pincode</label>
+        <input type="text" name="pickup-pincode" required>
+      </div>
 
-  <label style="display: block; margin-bottom: 8px;">Parcel Weight (Kg)</label>
-  <input type="number" name="weight" step="0.01" required style="width: 100%; padding: 12px; margin-bottom: 20px; border-radius: 8px; border: 1px solid #ccc;">
+      <div>
+        <label>Delivery Pincode</label>
+        <input type="text" name="delivery-pincode" required>
+      </div>
 
-  <label style="display: block; margin-bottom: 8px;">Parcel Dimensions (cm)</label>
-  <div style="display: flex; gap: 10px; margin-bottom: 20px;">
-    <input type="number" name="length" placeholder="Length" required style="flex: 1; padding: 12px; border-radius: 8px; border: 1px solid #ccc;">
-    <input type="number" name="breadth" placeholder="Breadth" required style="flex: 1; padding: 12px; border-radius: 8px; border: 1px solid #ccc;">
-    <input type="number" name="height" placeholder="Height" required style="flex: 1; padding: 12px; border-radius: 8px; border: 1px solid #ccc;">
-  </div>
+      <div>
+        <label>Parcel Weight (Kg)</label>
+        <input type="number" name="weight" step="0.01" required>
+      </div>
 
-  <label style="display: block; margin-bottom: 8px;">Priority</label>
-  <select name="priority" required style="width: 100%; padding: 12px; margin-bottom: 20px; border-radius: 8px; border: 1px solid #ccc;">
-    <option value="Standard">Standard</option>
-    <option value="Urgent">Urgent</option>
-    <option value="Critical Same Day">Critical Same Day</option>
-  </select>
+      <div>
+        <label>Parcel Dimensions (cm)</label>
+        <div class="dimensions">
+          <input type="number" name="length" placeholder="Length" required>
+          <input type="number" name="breadth" placeholder="Breadth" required>
+          <input type="number" name="height" placeholder="Height" required>
+        </div>
+      </div>
 
-  <label style="display: block; margin-bottom: 8px;">Message</label>
-  <textarea name="message" rows="4" placeholder="Additional notes..." style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #ccc; margin-bottom: 20px;"></textarea>
+      <div>
+        <label>Priority</label>
+        <select name="priority" required>
+          <option value="Standard">Standard</option>
+          <option value="Urgent">Urgent</option>
+          <option value="Critical Same Day">Critical Same Day</option>
+        </select>
+      </div>
 
-  <input type="hidden" name="_redirect" value="https://delicate-kitsune-8c4fed.netlify.app/thankyou.html">
+      <div>
+        <label>Message</label>
+        <textarea name="message" rows="4" placeholder="Additional notes..."></textarea>
+      </div>
 
-  <button type="submit" class="btn primary" style="margin-top: 10px; padding: 14px 20px; font-size: 16px; width: 100%; background-color: #007bff; border: none; border-radius: 8px; color: white; font-weight: bold;">Submit Request</button>
-</form>
+      <button type="submit">Submit Request</button>
+    </form>
+  </main>
 
-  </main>  <footer>
+  <footer style="margin-top: 40px;">
     Powered by Supreme Enterprises | GST No: 27CEXPS3188G1ZL | All rights reserved © Dartwala Express 2025
   </footer>
 </body>
