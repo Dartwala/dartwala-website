@@ -13,44 +13,46 @@
     </nav>
   </header>  <main class="hero">
     <h1>Request a Pickup</h1>
-    <p>Fill the details below. Our team will reach you!</p><<form action="https://formspree.io/f/xyzwzoqb" method="POST" style="max-width: 500px; margin: 40px auto; background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+    <p>Fill the details below. Our team will reach you!</p><form action="https://formspree.io/f/xyzwzoqb" method="POST" style="max-width: 500px; margin: 40px auto; background: #ffffff; padding: 40px 30px; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.1);">
 
-  <label>Name</label>
-  <input type="text" name="name" required>
+  <label style="display: block; margin-bottom: 8px;">Name</label>
+  <input type="text" name="name" required style="width: 100%; padding: 12px; margin-bottom: 20px; border-radius: 8px; border: 1px solid #ccc;">
 
-  <label>Email</label>
-  <input type="email" name="email" required>
+  <label style="display: block; margin-bottom: 8px;">Email</label>
+  <input type="email" name="email" required style="width: 100%; padding: 12px; margin-bottom: 20px; border-radius: 8px; border: 1px solid #ccc;">
 
-  <label>Phone Number</label>
-  <input type="tel" name="phone" required>
+  <label style="display: block; margin-bottom: 8px;">Phone Number</label>
+  <input type="tel" name="phone" required style="width: 100%; padding: 12px; margin-bottom: 20px; border-radius: 8px; border: 1px solid #ccc;">
 
-  <label>Pickup Pincode</label>
-  <input type="text" name="pickup-pincode" required>
+  <label style="display: block; margin-bottom: 8px;">Pickup Pincode</label>
+  <input type="text" name="pickup-pincode" required style="width: 100%; padding: 12px; margin-bottom: 20px; border-radius: 8px; border: 1px solid #ccc;">
 
-  <label>Delivery Pincode</label>
-  <input type="text" name="delivery-pincode" required>
+  <label style="display: block; margin-bottom: 8px;">Delivery Pincode</label>
+  <input type="text" name="delivery-pincode" required style="width: 100%; padding: 12px; margin-bottom: 20px; border-radius: 8px; border: 1px solid #ccc;">
 
-  <label>Parcel Weight (Kg)</label>
-  <input type="number" name="weight" step="0.01" required>
+  <label style="display: block; margin-bottom: 8px;">Parcel Weight (Kg)</label>
+  <input type="number" name="weight" step="0.01" required style="width: 100%; padding: 12px; margin-bottom: 20px; border-radius: 8px; border: 1px solid #ccc;">
 
-  <label>Parcel Dimensions (cm)</label>
-  <div style="display: flex; gap: 10px;">
-    <input type="number" name="length" placeholder="Length" required>
-    <input type="number" name="breadth" placeholder="Breadth" required>
-    <input type="number" name="height" placeholder="Height" required>
+  <label style="display: block; margin-bottom: 8px;">Parcel Dimensions (cm)</label>
+  <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+    <input type="number" name="length" placeholder="Length" required style="flex: 1; padding: 12px; border-radius: 8px; border: 1px solid #ccc;">
+    <input type="number" name="breadth" placeholder="Breadth" required style="flex: 1; padding: 12px; border-radius: 8px; border: 1px solid #ccc;">
+    <input type="number" name="height" placeholder="Height" required style="flex: 1; padding: 12px; border-radius: 8px; border: 1px solid #ccc;">
   </div>
 
-  <label>Priority</label>
-  <select name="priority" required>
+  <label style="display: block; margin-bottom: 8px;">Priority</label>
+  <select name="priority" required style="width: 100%; padding: 12px; margin-bottom: 20px; border-radius: 8px; border: 1px solid #ccc;">
     <option value="Standard">Standard</option>
     <option value="Urgent">Urgent</option>
     <option value="Critical Same Day">Critical Same Day</option>
   </select>
 
-  <label>Message</label>
-  <textarea name="message" rows="4" placeholder="Additional notes..."></textarea>
+  <label style="display: block; margin-bottom: 8px;">Message</label>
+  <textarea name="message" rows="4" placeholder="Additional notes..." style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #ccc; margin-bottom: 20px;"></textarea>
 
-  <button type="submit" class="btn primary" style="margin-top: 20px;">Submit Request</button>
+  <input type="hidden" name="_redirect" value="https://delicate-kitsune-8c4fed.netlify.app/thankyou.html">
+
+  <button type="submit" class="btn primary" style="margin-top: 10px; padding: 14px 20px; font-size: 16px; width: 100%; background-color: #007bff; border: none; border-radius: 8px; color: white; font-weight: bold;">Submit Request</button>
 </form>
 
   </main>  <footer>
