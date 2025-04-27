@@ -131,7 +131,7 @@ footer {
   100% { transform: translateX(-50%); }
 }
 #scrollBtn {
-  display: none;
+  display: block;
   position: fixed;
   bottom: 30px;
   right: 30px;
