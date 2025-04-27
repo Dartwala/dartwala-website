@@ -68,5 +68,20 @@
   <button onclick="scrolltotop()" id="scrollBtn"
     title="Go to top">↑</button>
   </footer>
-</body>
+<script>
+window.onscroll = function() { scrollFunction() };
+
+function scrollFunction() {
+  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+    document.getElementById("scrollBtn").style.display = "block";
+  } else {
+    document.getElementById("scrollBtn").style.display = "none";
+  }
+}
+
+function scrollToTop() {
+  document.body.scrollTop = 0; 
+  document.documentElement.scrollTop = 0; 
+}
+</script></body>
 </html>
