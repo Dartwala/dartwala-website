@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Dartwala Express</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <img src="logo.png" alt="Dartwala Express Logo" class="logo">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="why-us.html">Why Us</a>
+      <a href="contact.html">Contact</a>
+      <a href="#">Client Login</a>
+    </nav>
+  </header>
+
+  <main class="hero" style="padding-top: 60px;">
+    <h1>About Us</h1>
+    <p style="max-width: 800px; margin-top: 20px; color: #003366;">
+      At <strong>Dartwala Express</strong>, we believe courier service isn't just about moving a shipment from point A to B — it's about making smarter shipping decisions that drive business success.<br><br>
+
+      Born from a deep understanding of the real-world logistics challenges, Dartwala Express combines the flexibility of multi-courier access with the expertise of strategic logistics consultancy — all in one place.
+    </p>
+
+    <section style="margin-top: 60px; max-width: 1000px;">
+      <h2 style="color: #001d3d;">Our Story</h2>
+      <p style="margin-top: 20px; color: #003366;">
+        Our journey started with a clear purpose: to eliminate the confusion businesses face while choosing couriers. 
+        We realized that simply providing shipping services was not enough — what businesses truly needed was guidance, strategy, and transparency in logistics decisions.
+        <br><br>
+        Today, Dartwala Express proudly acts as the logistics backbone for startups, SMEs, and growing enterprises across India.
+      </p>
+    </section>
+
+    <section style="margin-top: 60px; max-width: 1000px;">
+      <h2 style="color: #001d3d;">Our Mission</h2>
+      <p style="margin-top: 20px; color: #003366;">
+        To simplify courier management for businesses by delivering expertise-driven, multi-courier solutions that save time, reduce cost, and enhance customer satisfaction.
+      </p>
+    </section>
+
+    <section style="margin-top: 60px; max-width: 1000px;">
+      <h2 style="color: #001d3d;">Our Vision</h2>
+      <p style="margin-top: 20px; color: #003366;">
+        To be recognized as India’s most trusted courier aggregation brand — offering reliable, innovative, and client-centered logistics solutions.
+      </p>
+    </section>
+
+    <section style="margin-top: 60px; max-width: 1000px; margin-bottom: 80px;">
+      <h2 style="color: #001d3d;">Our Core Values</h2>
+      <ul style="list-style-type: disc; margin-top: 20px; margin-left: 40px; color: #003366;">
+        <li>Reliability — Always deliver on promises.</li>
+        <li>Expertise — Every decision backed by research and operational knowledge.</li>
+        <li>Transparency — Honest, clear communication at every stage.</li>
+        <li>Client Success — Growing together through smarter logistics.</li>
+        <li>Continuous Innovation — Always seeking better, faster, smarter solutions.</li>
+      </ul>
+    </section>
+  </main>
+
+  <div class="ticker">
+    <marquee behavior="scroll" direction="left">
+      Fast Courier Pickup | Critical Dispatch Solutions | Relocation Services | Pan India Delivery | International Shipping Support | Dartwala Express – Delivering Trust, Darting Fast!
+    </marquee>
+  </div>
+
+  <footer>
+    Powered by Supreme Enterprises | GST No: 27CEXPS3188G1ZL | All rights reserved © Dartwala Express 2025
+  </footer>
+
+  <button onclick="scrollToTop()" id="scrollBtn" title="Go to top">⬆</button>
+
+  <script>
+    window.onscroll = function() { scrollFunction() };
+    function scrollFunction() {
+      if (document.body.scrollTop >= 100 || document.documentElement.scrollTop >= 100) {
+        document.getElementById("scrollBtn").style.display = "block";
+      } else {
+        document.getElementById("scrollBtn").style.display = "none";
+      }
+    }
+    function scrollToTop() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+  </script>
+</body>
+</html>
