@@ -300,3 +300,30 @@ footer {
   75%  { stroke-dashoffset: 180; }
   100% { stroke-dashoffset: 240; }
 }
+.animated-circle {
+  stroke: #007bff;
+  stroke-width: 2;
+  fill: none;
+  stroke-dasharray: 1260;
+  stroke-dashoffset: 1260;
+  animation: animateStroke 8s linear infinite;
+  stroke-linecap: round;
+}
+
+@keyframes animateStroke {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.step-number {
+  position: absolute;
+  font-size: 20px;
+  font-weight: bold;
+  color: #003366;
+}
+
+.step1 { top: 0%; left: 50%; transform: translate(-50%, -50%); }
+.step2 { top: 50%; left: 100%; transform: translate(-50%, -50%); }
+.step3 { bottom: 0%; left: 50%; transform: translate(-50%, 50%); }
+.step4 { top: 50%; left: 0%; transform: translate(-50%, -50%); }
