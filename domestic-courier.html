@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Domestic Courier Services | Dartwala Express</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <style>
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .service-section {
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 0 20px;
+      line-height: 1.8;
+      font-size: 18px;
+      color: #003366;
+    }
+    .service-section h2 {
+      margin-bottom: 20px;
+      color: #001d3d;
+    }
+    .service-benefits ul {
+      list-style: inside square;
+      margin-top: 10px;
+    }
+    .cta-button {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 14px 28px;
+      background-color: #007bff;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+    .cta-button:hover {
+      background-color: #0056b3;
+    }
+    .process-flow {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-top: 40px;
+    }
+    .process-step {
+      background: #f4f9ff;
+      padding: 20px;
+      margin: 10px;
+      flex: 1 1 200px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <!-- Same header code here (with Company and Services dropdown) -->
+  </header>
+
+  <main>
+    <section class="hero fade-in">
+      <h1>Fast. Reliable. Human-Centered — Domestic Deliveries Redefined.</h1>
+      <p>Moving not just parcels, but trust and business commitments across India.</p>
+      <!-- (Optional) Clipart Placeholder for Hero Image -->
+    </section>
+
+    <section class="service-section fade-in">
+      <h2>Why Domestic Courier Services Matter</h2>
+      <p>In today's fast-paced world, timely and secure domestic delivery is critical for business survival and customer trust. Dartwala Express ensures your shipments reach every corner of India — faster, smarter, and with genuine human support at every stage.</p>
+    </section>
+
+    <section class="service-section fade-in">
+      <h2>Our Expertise</h2>
+      <p>With a network covering urban hubs and remote areas, a deep understanding of smart courier allocation, and a 98%+ successful first-attempt delivery rate, Dartwala Express is redefining how India ships its essentials.</p>
+    </section>
+
+    <section class="service-section service-benefits fade-in">
+      <h2>Key Benefits of Choosing Us</h2>
+      <ul>
+        <li>Faster Pickup & Dispatch — Same-day options available</li>
+        <li>Tailored Delivery Solutions — Standard, Express, Critical Same-Day</li>
+        <li>Transparent Tracking — Real-time shipment visibility</li>
+        <li>Cost-Optimized Couriering — Best service at best value</li>
+        <li>High Success Rate — 98%+ first-attempt delivery success</li>
+        <li>Pincode Intelligence — Serviceability check before dispatch</li>
+      </ul>
+    </section>
+
+    <section class="service-section fade-in">
+      <h2>How Dartwala Express Domestic Delivery Works</h2>
+      <div class="process-flow">
+        <div class="process-step">1. Pickup Request</div>
+        <div class="process-step">2. Smart Courier Selection</div>
+        <div class="process-step">3. Dispatch Same/Next Day</div>
+        <div class="process-step">4. Real-Time Tracking</div>
+        <div class="process-step">5. Successful POD</div>
+      </div>
+    </section>
+
+    <section class="service-section fade-in" style="text-align: center;">
+      <a href="quote.html" class="cta-button">Request Pickup Now</a>
+    </section>
+  </main>
+
+  <footer>
+    Powered by Supreme Enterprises | GST No: 27CEXPS3188G1ZL | All rights reserved © Dartwala Express 2025
+  </footer>
+
+<script>
+  const fadeElements = document.querySelectorAll('.fade-in');
+  window.addEventListener('scroll', () => {
+    fadeElements.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 50) {
+        el.classList.add('show');
+      }
+    });
+  });
+</script>
+
+</body>
+</html
