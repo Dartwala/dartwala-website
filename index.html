@@ -38,16 +38,30 @@
 </nav>
   </header>
 
-  <main class="hero">
+  <main class="hero" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; padding: 100px 40px;">
+  <div style="flex: 1;">
     <h1>Delivering Trust. Darting Fast.</h1>
     <p>India’s Personalized Courier Aggregator – Efficient, Transparent & Human-Centered</p>
-    <div class="buttons" style="display: flex; gap: 10px; align-items: center;">
-  <a href="quote.html" class="btn primary">Get a Quote</a>
-  <a href="https://wa.me/919136801619" target="_blank" class="btn outline">WhatsApp Us</a>
-  <a href="https://wa.me/919136801619?text=I%20want%20to%20request%20a%20courier%20pickup" target="_blank" class="btn pickup">Request Pickup</a>
-</div>
-  </main>
+    <div class="buttons" style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 30px; align-items: center;">
+      <a href="quote.html" class="btn primary">Get a Quote</a>
+      <a href="https://wa.me/919136801619" target="_blank" class="btn outline">WhatsApp Us</a>
+      <a href="quote.html" class="btn primary">Book Now</a>
+    </div>
+  </div>
 
+  <!-- Circle Animation Block -->
+  <div class="circle-wrapper" style="flex: 1; position: relative; display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+    <div class="circle-text" id="stepText" style="position: absolute; top: 25%; text-align: center; font-size: 16px; font-weight: 600; color: #003366;">
+      Create Your Dartwala Account
+    </div>
+    <a href="quote.html" class="btn open-account-btn" style="position: absolute; bottom: 25%; padding: 16px 30px; font-size: 18px; font-weight: bold; background-color: #28a745; color: white; border-radius: 8px; text-decoration: none;">
+      Open Account
+    </a>
+    <svg class="loop-circle" viewBox="0 0 200 200" style="width: 260px; height: 260px; transform: rotate(-90deg);">
+      <circle cx="100" cy="100" r="90" stroke="#007bff" stroke-dasharray="565" stroke-width="2" fill="none" stroke-linecap="round" />
+    </svg>
+  </div>
+</main>
   <section class="partner-ticker">
     <h2>Our Trusted Courier Network</h2>
     <p>Proudly collaborating with India’s leading courier services for faster, safer deliveries.</p>
