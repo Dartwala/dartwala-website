@@ -101,7 +101,21 @@
   <footer>
     Powered by Supreme Enterprises | GST No: 27CEXPS3188G1ZL | All rights reserved © Dartwala Express 2025
   </footer>
-
+<script>
+const steps = [
+  "Create Your Dartwala Account",
+  "Complete KYC & Business Details",
+  "Recharge and Get Onboarded",
+  "Start Shipping with Us Seamlessly"
+];
+let stepIndex = 0;
+const stepText = document.getElementById("stepText");
+setInterval(() => {
+  stepIndex = (stepIndex + 1) % steps.length;
+  stepText.textContent = steps[stepIndex];
+}, 2000);
+</script>
+  
 <script>
 window.onscroll = function() { scrollFunction() };
 
