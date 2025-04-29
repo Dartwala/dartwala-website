@@ -283,3 +283,20 @@ footer {
   stroke-dasharray: 4, 8;
   stroke-linecap: round;
 }
+.animated-circle {
+  fill: none;
+  stroke: #007bff;
+  stroke-width: 2;
+  stroke-dasharray: 16, 8; /* dotted look */
+  stroke-dashoffset: 0;
+  stroke-linecap: round;
+  animation: dashTravel 4s linear infinite;
+}
+
+@keyframes dashTravel {
+  0%   { stroke-dashoffset: 0; }
+  25%  { stroke-dashoffset: 60; }
+  50%  { stroke-dashoffset: 120; }
+  75%  { stroke-dashoffset: 180; }
+  100% { stroke-dashoffset: 240; }
+}
