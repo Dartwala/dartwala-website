@@ -130,6 +130,20 @@ footer {
   0% { transform: translateX(0%); }
   100% { transform: translateX(-50%); }
 }
+@keyframes dashLoop {
+  0% { stroke-dashoffset: 565; }
+  100% { stroke-dashoffset: 0; }
+}
+
+@keyframes fadeText {
+  0%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+.loop-circle {
+  animation: dashLoop 8s linear infinite;
+}
 #scrollBtn {
   display: block;
   position: fixed;
