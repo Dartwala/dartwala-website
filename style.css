@@ -209,17 +209,17 @@ footer {
 }
 
 .dropdown-content a {
+  font-size: 15px;       /* Reduced for subtle, neat look */
+  font-weight: 500;      /* Softer appearance */
   color: #003366;
-  padding: 12px 16px;
+  padding: 10px 16px;    /* Slightly tighter padding */
   text-decoration: none;
   display: block;
-  font-weight: 500;
 }
 
 .dropdown-content a:hover {
   background-color: #f1f1f1;
 }
-
 .dropdown:hover .dropdown-content {
   display: block;
 }
