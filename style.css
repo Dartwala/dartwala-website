@@ -317,3 +317,21 @@ footer {
   background-color: #218838;
   transform: translateX(-50%) scale(1.05);
 }
+.circle-text {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 15px;
+  font-weight: 600;
+  color: #003366;
+  width: 180px;
+  animation: fadeText 8s infinite;
+}
+
+.loop-circle {
+  animation: dashLoop 8s linear infinite;
+  stroke-dasharray: 4, 8;
+  stroke-linecap: round;
+}
