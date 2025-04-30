@@ -1,4 +1,4 @@
-* {
+[7:24 am, 30/4/2025] Bhavesh Shinde: * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -33,31 +33,27 @@ nav a {
   font-size: 18px;
   transition: transform 0.3s;
 }
-
 nav a:hover {
   transform: scale(1.1);
 }
 
+/* Hero & Button styles (unchanged) */
 .hero {
   text-align: left;
   padding: 100px 40px;
 }
-
 .hero h1 {
   font-size: 3rem;
   color: #001d3d;
 }
-
 .hero p {
   font-size: 1.2rem;
   margin: 20px 0;
   color: #003366;
 }
-
 .buttons {
   margin-top: 30px;
 }
-
 .buttons .btn {
   display: inline-block;
   padding: 12px 24px;
@@ -67,24 +63,22 @@ nav a:hover {
   transition: 0.3s all;
   text-decoration: none;
 }
-
 .btn.primary {
   background-color: #007bff;
   color: white;
   box-shadow: 0 0 8px rgba(0, 123, 255, 0.7);
 }
-
 .btn.outline {
   border: 2px solid #007bff;
   color: #007bff;
   background: white;
 }
-
 .buttons .btn:hover {
   transform: scale(1.05);
   box-shadow: 0 0 12px rgba(0, 123, 255, 1);
 }
 
+/* Footer & ticker */
 footer {
   background-color: #003366;
   color: white;
@@ -92,36 +86,35 @@ footer {
   padding: 15px 10px;
   font-size: 14px;
 }
-
 .ticker {
   background: #001d3d;
   color: white;
   padding: 10px;
   font-size: 16px;
 }
-
 .partner-ticker {
   background-color: #f8f9fa;
   padding: 20px 0;
   overflow: hidden;
 }
-
 .ticker-wrap {
   overflow: hidden;
   position: relative;
 }
-
 .ticker-move {
   display: inline-flex;
   white-space: nowrap;
   animation: tickerMove 15s linear infinite;
   gap: 20px;
 }
-
 .ticker-move img {
   height: 60px;
   margin: 0 20px;
   object-fit: contain;
+}
+@keyframes tickerMove {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
 }
 
 /* Scroll to top button */
@@ -143,13 +136,17 @@ footer {
   transition: 0.3s ease;
   animation: pulse 2s infinite;
 }
-
 #scrollBtn:hover {
   background-color: #0056b3;
   transform: scale(1.1);
 }
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(0,123,255, 0.7); }
+  70% { box-shadow: 0 0 0 15px rgba(0,123,255, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0,123,255, 0); }
+}
 
-/* Circle Animation */
+/* Circle Wrapper */
 .circle-wrapper {
   position: relative;
   width: 420px;
@@ -157,6 +154,12 @@ footer {
   margin: 40px auto;
 }
 
+/* SVG Circle - dotted line with progression */
+.loop-circle {
+  stroke-dasharray: 4, 8;
+  stroke-linecap: round;
+  animation: dashLoop 8s linear infinite;
+}
 .animated-circle {
   fill: none;
   stroke: #007bff;
@@ -166,109 +169,186 @@ footer {
   animation: animateStroke 8s linear infinite;
   stroke-linecap: round;
 }
-
-/* Step Numbers and Texts */
-.step-number,
-.step-text {
-  position: absolute;
-  font-size: 16px;
-  font-weight: bold;
-  color: #003366;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-}
-
-/* Number Positions */
-.step1 { top: -20px; left: 50%; transform: translateX(-50%); }
-.step2 { top: 50%; right: -40px; transform: translateY(-50%); }
-.step3 { bottom: -20px; left: 50%; transform: translateX(-50%); }
-.step4 { top: 50%; left: -40px; transform: translateY(-50%); }
-
-/* Text Positions aligned with numbers */
-.step-text1 {
-  top: -50px;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-}
-.step-text2 {
-  top: 50%;
-  right: -180px;
-  transform: translateY(-50%);
-  width: 160px;
-  text-align: left;
-}
-.step-text3 {
-  bottom: -50px;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-}
-.step-text4 {
-  top: 50%;
-  left: -180px;
-  transform: translateY(-50%);
-  width: 160px;
-  text-align: right;
-}
-
-/* Fade-in Animation */
-.step1, .step-text1 {
-  animation: fadeQuarter 8s linear infinite;
-}
-.step2, .step-text2 {
-  animation: fadeQuarter2 8s linear infinite;
-}
-.step3, .step-text3 {
-  animation: fadeQuarter3 8s linear infinite;
-}
-.step4, .step-text4 {
-  animation: fadeQuarter4 8s linear infinite;
-}
-
-/* KEYFRAMES */
-@keyframes tickerMove {
-  0% { transform: translateX(0%); }
-  100% { transform: translateX(-50%); }
-}
-
-@keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(0,123,255, 0.7);
-  }
-  70% {
-    box-shadow: 0 0 0 15px rgba(0,123,255, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(0,123,255, 0);
-  }
-}
-
 @keyframes animateStroke {
   to { stroke-dashoffset: 0; }
 }
-
 @keyframes dashLoop {
   0% { stroke-dashoffset: 1260; }
   100% { stroke-dashoffset: 0; }
 }
 
-@keyframes fadeQuarter {
-  0%, 24.99% { opacity: 1; }
-  25%, 100%  { opacity: 0; }
+/* Step Numbers */
+.step-number {
+  width: 36px;
+  height: 36px;
+  border: 2px dashed #007bff;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  font-size: 16px;
+  font-weight: bold;
+  color: #003366;
+  opacity: 0;
 }
 
-@keyframes fadeQuarter2 {
+/* Step Texts */
+.step-text {
+  position: absolute;
+  font-size: 14px;
+  font-weight: 600;
+  color: #003366;
+  width: 160px;
+  text-align: center;
+  opacity: 0;
+}
+
+/* Positioning Numbers at 0°, 90°, 180°, 270° */
+.step1 { top: 0%; left: 50%; transform: translate(-50%, -50%); }
+.step2 { top: 50%; left: 100%; transform: translate(-50%, -50%); }
+.step3 { top: 100%; left: 50%; transform: translate(-50%, -50%); }
+.step4 { top: 50%; left: 0%; transform: translate(-50%, -50%); }
+
+/* Positioning Texts slightly outward from numbers */
+.step-text1 { top: -40px; left: 50%; transform: translateX(-50%); }
+.step-text2 { top: 50%; left: 115%; transform: translateY(-50%); text-align: left; }
+.step-text3 { top: 110%; left: 50%; transform: translateX(-50%); }
+.step-text4 { top: 50%; left: -70px; transform: translateY(-50%); text-align: right; }
+
+/* Fade Animations */
+@keyframes fade1 {
+  0%, 24.99% { opacity: 1; }
+  25%, 100% { opacity: 0; }
+}
+@keyframes fade2 {
   25%, 49.99% { opacity: 1; }
   0%, 24.99%, 50%, 100% { opacity: 0; }
 }
-
-@keyframes fadeQuarter3 {
+@keyframes fade3 {
   50%, 74.99% { opacity: 1; }
   0%, 49.99%, 75%, 100% { opacity: 0; }
 }
+@keyframes fade4 {
+  75%, 100% { opacity: 1; }
+  0%, 74.99% { opacity: 0; }
+}
 
-@keyframes fadeQuarter4 {
-  75%, 99.99% { opacity: 1; }
-  0%, 74.99%, 100% { opacity: 0; }
+/* Apply fade animations */
+.step1, .step-text1 { animation: fade1 8s linear infinite; }
+.step2, .step-text2 { animation: fade2 8s linear infinite; }
+.step3, .step-text3 { animation: fade3 8s linear infinite; }
+.step4, .step-text4 { animation: fade4 8s linear infinite; }
+[7:29 am, 30/4/2025] Bhavesh Shinde: * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #e6f3ff;
+}
+
+.circle-wrapper {
+  position: relative;
+  width: 420px;
+  height: 420px;
+  margin-left: auto;
+  margin-top: 40px;
+}
+
+/* Orange border circle */
+.loop-circle {
+  stroke-dasharray: 1260;
+  stroke-dashoffset: 1260;
+  animation: animateStroke 8s linear infinite;
+  stroke-linecap: round;
+}
+
+.animated-circle {
+  fill: none;
+  stroke: #007bff;
+  stroke-width: 2;
+  stroke-dasharray: 8, 10;
+  stroke-dashoffset: 1260;
+  animation: animateStroke 8s linear infinite;
+  stroke-linecap: round;
+}
+
+/* Orange bold border */
+.loop-circle circle:first-child {
+  stroke: #ff7f00;
+  stroke-width: 6;
+  fill: none;
+}
+
+/* Center text */
+.circle-center-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  font-weight: bold;
+  color: #ff7f00;
+  text-align: center;
+  width: 160px;
+}
+
+/* Step Numbers */
+.step-number {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  background-color: #ff7f00;
+  color: white;
+  font-weight: bold;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 32px;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Step Labels */
+.step-text {
+  position: absolute;
+  font-size: 14px;
+  font-weight: 600;
+  color: #003366;
+  width: 140px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Positions */
+.step1 { top: -15px; left: 50%; transform: translateX(-50%); }
+.step-text1 { top: -45px; left: 50%; transform: translateX(-50%); }
+
+.step2 { top: 50%; right: -15px; transform: translateY(-50%); }
+.step-text2 { top: 50%; right: -170px; transform: translateY(-50%); }
+
+.step3 { bottom: -15px; left: 50%; transform: translateX(-50%); }
+.step-text3 { bottom: -45px; left: 50%; transform: translateX(-50%); }
+
+.step4 { top: 50%; left: -15px; transform: translateY(-50%); }
+.step-text4 { top: 50%; left: -170px; transform: translateY(-50%); }
+
+/* Fade animation sequence */
+@keyframes fadeQuarter1 { 0%, 24.99% { opacity: 1; } 25%, 100% { opacity: 0; } }
+@keyframes fadeQuarter2 { 25%, 49.99% { opacity: 1; } 0%, 24.99%, 50%, 100% { opacity: 0; } }
+@keyframes fadeQuarter3 { 50%, 74.99% { opacity: 1; } 0%, 49.99%, 75%, 100% { opacity: 0; } }
+@keyframes fadeQuarter4 { 75%, 99.99% { opacity: 1; } 0%, 74.99%, 100% { opacity: 0; } }
+
+.step1, .step-text1 { animation: fadeQuarter1 8s linear infinite; }
+.step2, .step-text2 { animation: fadeQuarter2 8s linear infinite; }
+.step3, .step-text3 { animation: fadeQuarter3 8s linear infinite; }
+.step4, .step-text4 { animation: fadeQuarter4 8s linear infinite; }
+
+@keyframes animateStroke {
+  0% { stroke-dashoffset: 1260; }
+  100% { stroke-dashoffset: 0; }
 }
