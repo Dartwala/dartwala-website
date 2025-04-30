@@ -298,15 +298,28 @@ footer {
     stroke-dashoffset: 0;
   }
 }
-
 .step-number {
   position: absolute;
   font-size: 20px;
   font-weight: bold;
   color: #003366;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
 }
 
-.step1 { top: 0%; left: 50%; transform: translate(-50%, -50%); }
-.step2 { top: 50%; left: 100%; transform: translate(-50%, -50%); }
-.step3 { bottom: 0%; left: 50%; transform: translate(-50%, 50%); }
-.step4 { top: 50%; left: 0%; transform: translate(-50%, -50%); }
+.step1 { top: 0%; left: 50%; transform: translate(-50%, -50%); animation: fadeSteps 8s linear infinite; animation-delay: 0s; }
+.step2 { top: 50%; left: 100%; transform: translate(-50%, -50%); animation: fadeSteps 8s linear infinite; animation-delay: 2s; }
+.step3 { bottom: 0%; left: 50%; transform: translate(-50%, 50%); animation: fadeSteps 8s linear infinite; animation-delay: 4s; }
+.step4 { top: 50%; left: 0%; transform: translate(-50%, -50%); animation: fadeSteps 8s linear infinite; animation-delay: 6s; }
+
+@keyframes fadeSteps {
+  0%   { opacity: 1; }
+  24%  { opacity: 0; }
+  25%  { opacity: 1; }
+  49%  { opacity: 0; }
+  50%  { opacity: 1; }
+  74%  { opacity: 0; }
+  75%  { opacity: 1; }
+  99%  { opacity: 0; }
+  100% { opacity: 1; }
+}
