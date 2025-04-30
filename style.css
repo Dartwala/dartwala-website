@@ -246,15 +246,25 @@ footer {
 
 .circle-text {
   position: absolute;
-  top: 45%;
+  top: 25%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600;
   color: #003366;
-  width: 180px;
-  animation: fadeText 8s infinite;
+  opacity: 0;
+  animation: fadeInStep 8s linear infinite;
+}
+
+.step-text1 { animation-delay: 0s; }
+.step-text2 { animation-delay: 2s; }
+.step-text3 { animation-delay: 4s; }
+.step-text4 { animation-delay: 6s; }
+
+@keyframes fadeInStep {
+  0%, 12.5% { opacity: 1; }
+  25%, 100% { opacity: 0; }
 }
 
 .open-account-btn {
