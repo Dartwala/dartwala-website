@@ -161,7 +161,7 @@ footer {
   fill: none;
   stroke: #007bff;
   stroke-width: 2;
-  stroke-dasharray: 4, 8; /* This creates the dotted effect */
+  stroke-dasharray: 1260;
   stroke-dashoffset: 1260;
   animation: animateStroke 8s linear infinite;
   stroke-linecap: round;
