@@ -282,3 +282,7 @@ footer {
   70% { box-shadow: 0 0 0 15px rgba(0,123,255, 0); }
   100% { box-shadow: 0 0 0 0 rgba(0,123,255, 0); }
 }
+partner-ticker h2,
+.partner-ticker p {
+  text-align: center;
+}
