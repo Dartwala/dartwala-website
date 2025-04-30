@@ -234,3 +234,21 @@ footer {
   transform: translateY(-5px);
   box-shadow: 0 6px 16px rgba(0, 123, 255, 0.15);
 }
+/* Header alignment fix */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.logo-container {
+  flex-shrink: 0;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  margin-left: auto; /* Pushes nav to far right */
+}
