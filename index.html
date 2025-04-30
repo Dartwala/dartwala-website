@@ -38,21 +38,24 @@
   </div>
 </header>
   <section class="hero">
-  <div class="hero-container">
-    <!-- Left Side: Text + 2 buttons -->
-    <div class="hero-text">
-      <h1>Delivering Trust. Darting Fast.</h1>
-      <p>India’s Personalized Courier Aggregator – Efficient, Transparent & Human-Centered</p>
-      <div class="hero-left-buttons">
-        <a href="quote.html" class="btn primary">Get a Quote</a>
-        <a href="https://wa.me/919136801619" target="_blank" class="btn outline">WhatsApp Us</a>
-      </div>
-    </div>
+  <div class="hero-container"><!-- Left Side: Text + WhatsApp + Book Now -->
+<div class="hero-text">
+  <h1>Delivering Trust. Darting Fast.</h1>
+  <p>India’s Personalized Courier Aggregator – Efficient, Transparent & Human-Centered</p>
+  <div class="hero-left-buttons">
+    <a href="https://wa.me/919136801619?text=I%20want%20to%20request%20a%20courier%20pickup" target="_blank" class="btn pickup">Book Now</a>
+    <a href="https://wa.me/919136801619" target="_blank" class="btn outline">WhatsApp Us</a>
+  </div>
+</div>
 
-    <!-- Right Side: Book Now button -->
-    <div class="hero-button-right">
-      <a href="https://wa.me/919136801619?text=I%20want%20to%20request%20a%20courier%20pickup" target="_blank" class="btn pickup">Book Now</a>
-    </div>
+<!-- Right Side: Circular Animation Canvas -->
+<div class="hero-animation">
+  <div id="canvas-container">
+    <canvas id="progressCanvas" width="300" height="300"></canvas>
+    <div class="center-circle">Open Account in<br>4-Steps</div>
+  </div>
+</div>
+
   </div>
 </section>
   <section class="partner-ticker">
@@ -110,5 +113,85 @@ function scrollToTop() {
   document.body.scrollTop = 0; 
   document.documentElement.scrollTop = 0; 
 }
-</script></body>
+</script>
+<script>
+window.onload = function () {
+  const canvas = document.getElementById("progressCanvas");
+  const ctx = canvas.getContext("2d");
+  const centerX = canvas.width / 2;
+  const centerY = canvas.height / 2;
+  const radius = 120;
+
+  let angle = 0;
+  const maxAngle = 2 * Math.PI;
+  let glowPulse = 0;
+  let pulseDirection = 1;
+
+  const steps = [
+    { angle: 0, label: "1", icon: "👤", text: "Register", alpha: 0 },
+    { angle: Math.PI / 2, label: "2", icon: "✅", text: "Verify", alpha: 0 },
+    { angle: Math.PI, label: "3", icon: "⚙️", text: "Onboard", alpha: 0 },
+    { angle: (3 * Math.PI) / 2, label: "4", icon: "🚚", text: "Start", alpha: 0 }
+  ];
+
+  function drawProgress(currentAngle) {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.beginPath();
+    ctx.lineWidth = 10;
+    ctx.strokeStyle = "#0070c0";
+    ctx.arc(centerX, centerY, radius, 0, currentAngle);
+    ctx.stroke();
+
+    glowPulse += pulseDirection * 0.5;
+    if (glowPulse > 20 || glowPulse < 5) pulseDirection *= -1;
+
+    steps.forEach(step => {
+      if (currentAngle >= step.angle) {
+        if (step.alpha < 1) step.alpha += 0.02;
+
+        const x = centerX + radius * Math.cos(step.angle);
+        const y = centerY + radius * Math.sin(step.angle);
+        const labelRadius = radius + 40;
+        const labelX = centerX + labelRadius * Math.cos(step.angle);
+        const labelY = centerY + labelRadius * Math.sin(step.angle);
+
+        ctx.globalAlpha = step.alpha;
+        ctx.shadowColor = "#003366";
+        ctx.shadowBlur = glowPulse;
+        ctx.beginPath();
+        ctx.fillStyle = "#003366";
+        ctx.arc(x, y, 18, 0, 2 * Math.PI);
+        ctx.fill();
+        ctx.shadowBlur = 0;
+
+        ctx.fillStyle = "white";
+        ctx.font = "bold 14px sans-serif";
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.fillText(step.label, x, y);
+
+        ctx.fillStyle = "#003366";
+        ctx.font = "12px sans-serif";
+        ctx.fillText(step.icon + " " + step.text, labelX, labelY);
+
+        ctx.globalAlpha = 1;
+      }
+    });
+  }
+
+  function animate() {
+    if (angle < maxAngle || steps.some(step => step.alpha < 1)) {
+      if (angle < maxAngle) angle += 0.02;
+      drawProgress(angle);
+      requestAnimationFrame(animate);
+    } else {
+      drawProgress(maxAngle);
+      requestAnimationFrame(animate);
+    }
+  }
+
+  animate();
+};
+</script>
+</body>
 </html>
