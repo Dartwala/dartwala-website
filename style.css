@@ -291,3 +291,8 @@ footer {
   border-radius: 8px;
   text-decoration: none;
 }
+.hero-left-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
