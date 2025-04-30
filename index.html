@@ -124,26 +124,20 @@ window.onload = function () {
 
   let angle = 0;
   const maxAngle = 2 * Math.PI;
-  let glowPulse = 0;
-  let pulseDirection = 1;
-
+  
   const steps = [
-    { angle: 0, label: "1", icon: "👤", text: "Register", alpha: 0 },
-    { angle: Math.PI / 2, label: "2", icon: "✅", text: "Verify", alpha: 0 },
-    { angle: Math.PI, label: "3", icon: "⚙️", text: "Onboard", alpha: 0 },
-    { angle: (3 * Math.PI) / 2, label: "4", icon: "🚚", text: "Start", alpha: 0 }
-  ];
-
+  { angle: -Math.PI / 2, label: "1", icon: "👤", text: "Register", alpha: 0 },
+  { angle: 0, label: "2", icon: "✅", text: "Verify", alpha: 0 },
+  { angle: Math.PI / 2, label: "3", icon: "⚙️", text: "Onboard", alpha: 0 },
+  { angle: Math.PI, label: "4", icon: "🚚", text: "Start", alpha: 0 }
+];
   function drawProgress(currentAngle) {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.beginPath();
     ctx.lineWidth = 10;
     ctx.strokeStyle = "#0070c0";
-    ctx.arc(centerX, centerY, radius, 0, currentAngle);
+    ctx.arc(centerX, centerY, radius, -Math.PI / 2, currentAngle - Math.PI / 2);
     ctx.stroke();
-
-    glowPulse += pulseDirection * 0.5;
-    if (glowPulse > 20 || glowPulse < 5) pulseDirection *= -1;
 
     steps.forEach(step => {
       if (currentAngle >= step.angle) {
@@ -151,13 +145,13 @@ window.onload = function () {
 
         const x = centerX + radius * Math.cos(step.angle);
         const y = centerY + radius * Math.sin(step.angle);
-        const labelRadius = radius + 40;
+        const labelRadius = radius + 50;
         const labelX = centerX + labelRadius * Math.cos(step.angle);
         const labelY = centerY + labelRadius * Math.sin(step.angle);
 
         ctx.globalAlpha = step.alpha;
         ctx.shadowColor = "#003366";
-        ctx.shadowBlur = glowPulse;
+        ctx.shadowBlur = 0;
         ctx.beginPath();
         ctx.fillStyle = "#003366";
         ctx.arc(x, y, 18, 0, 2 * Math.PI);
@@ -171,7 +165,7 @@ window.onload = function () {
         ctx.fillText(step.label, x, y);
 
         ctx.fillStyle = "#003366";
-        ctx.font = "12px sans-serif";
+        ctx.font = "16px 'Segoe UI', sans-serif";
         ctx.fillText(step.icon + " " + step.text, labelX, labelY);
 
         ctx.globalAlpha = 1;
@@ -180,7 +174,9 @@ window.onload = function () {
   }
 
   function animate() {
-    if (angle < maxAngle || steps.some(step => step.alpha < 1)) {
+    angle += 0.02;
+drawProgress(angle);
+requestAnimationFrame(animate);
       if (angle < maxAngle) angle += 0.02;
       drawProgress(angle);
       requestAnimationFrame(animate);
