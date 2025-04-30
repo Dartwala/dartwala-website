@@ -265,3 +265,29 @@ footer {
   align-items: center;
   margin-left: auto; /* Pushes nav to far right */
 }
+.hero-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 40px;
+}
+
+.hero-text {
+  flex: 1 1 60%;
+}
+
+.hero-button-right {
+  flex: 1 1 30%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn.pickup {
+  background-color: #28a745;
+  color: white;
+  padding: 12px 24px;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+}
