@@ -174,14 +174,21 @@ window.onload = function () {
   }
 
   function animate() {
-    angle += 0.02;
-  if (angle > 2 * Math.PI) angle = 0; // reset to loop forever
+  angle += 0.02;
+  if (angle > 2 * Math.PI) {
+    angle = 0;
+    steps.forEach(step => step.alpha = 0); // Reset all alphas for loop
+  }
+
+  // Fade in steps gradually as arc progresses
+  steps.forEach(step => {
+    if (angle - Math.PI / 2 >= step.angle && step.alpha < 1) {
+      step.alpha += 0.02;
+    }
+  });
+
   drawProgress(angle);
   requestAnimationFrame(animate);
-} else {
-      drawProgress(maxAngle);
-      requestAnimationFrame(animate);
-    }
   }
 
   animate();
