@@ -175,12 +175,10 @@ window.onload = function () {
 
   function animate() {
     angle += 0.02;
-drawProgress(angle);
-requestAnimationFrame(animate);
-      if (angle < maxAngle) angle += 0.02;
-      drawProgress(angle);
-      requestAnimationFrame(animate);
-    } else {
+  if (angle > 2 * Math.PI) angle = 0; // reset to loop forever
+  drawProgress(angle);
+  requestAnimationFrame(animate);
+} else {
       drawProgress(maxAngle);
       requestAnimationFrame(animate);
     }
