@@ -47,25 +47,22 @@
       <a href="https://wa.me/919136801619" target="_blank" class="btn outline">WhatsApp Us</a>
       <a href="quote.html" class="btn primary">Book Now</a>
     </div>
-  </div>
 <!-- Circle Animation Block -->
 <div class="circle-wrapper" style="flex: 1; position: relative; display: flex; justify-content: center; align-items: center; margin-top: 20px;">
-  <div class="circle-text" id="stepText" style="position: absolute; top: 25%; text-align: center; font-size: 16px; font-weight: 600; color: #003366;">
-    Create Your Dartwala Account
-  </div>
-  
+
   <!-- SVG Loop -->
   <svg class="loop-circle" viewBox="0 0 440 440" style="width: 420px; height: 420px; transform: rotate(-90deg);">
     <circle cx="220" cy="220" r="200" class="animated-circle" />
   </svg>
 
-  <!-- Step Numbers (outside SVG) -->
-  <div class="step-number step1">1</div>
-  <div class="step-number step2">2</div>
-  <div class="step-number step3">3</div>
-  <div class="step-number step4">4</div>
-</div>
- </main>
+  <!-- Step Texts with Individual Animation -->
+  <div class="circle-text step-text step-text1">Create Your Dartwala Account</div>
+  <div class="circle-text step-text step-text2">Complete KYC & Business Details</div>
+  <div class="circle-text step-text step-text3">Recharge and Get Onboarded</div>
+  <div class="circle-text step-text step-text4">Start Shipping with Us Seamlessly</div>
+
+</div> <!-- Close .circle-wrapper -->
+  </main>
   <section class="partner-ticker">
     <h2>Our Trusted Courier Network</h2>
     <p>Proudly collaborating with India’s leading courier services for faster, safer deliveries.</p>
@@ -105,22 +102,6 @@
   <footer>
     Powered by Supreme Enterprises | GST No: 27CEXPS3188G1ZL | All rights reserved © Dartwala Express 2025
   </footer>
-<script>
-const steps = [
-  "Create Your Dartwala Account",
-  "Complete KYC & Business Details",
-  "Recharge and Get Onboarded",
-  "Start Shipping with Us Seamlessly"
-];
-let stepIndex = 0;
-const stepText = document.getElementById("stepText");
-setInterval(() => {
-  stepIndex = (stepIndex + 1) % steps.length;
-  stepText.textContent = steps[stepIndex];
-}, 2000);
-</script>
-  
-<script>
 window.onscroll = function() { scrollFunction() };
 
 function scrollFunction() {
@@ -135,5 +116,21 @@ function scrollToTop() {
   document.body.scrollTop = 0; 
   document.documentElement.scrollTop = 0; 
 }
-</script></body>
+<script>
+window.onscroll = function() { scrollFunction(); };
+
+function scrollFunction() {
+  if (document.body.scrollTop >= 100 || document.documentElement.scrollTop >= 100) {
+    document.getElementById("scrollBtn").style.display = "block";
+  } else {
+    document.getElementById("scrollBtn").style.display = "none";
+  }
+}
+
+function scrollToTop() {
+  document.body.scrollTop = 0; 
+  document.documentElement.scrollTop = 0; 
+}
+</script>
+</body>
 </html>
