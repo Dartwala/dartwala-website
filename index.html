@@ -51,28 +51,31 @@
   </div>
 
   <!-- Right Circular Animation -->
-  <div class="circle-wrapper">
-    <!-- Dotted SVG Circle -->
-    <svg class="loop-circle" viewBox="0 0 440 440">
-      <circle cx="220" cy="220" r="200" class="base-circle" />
-      <circle cx="220" cy="220" r="200" class="animated-circle" />
-    </svg>
+  <!-- Inside your <main> tag where the animation appears -->
+<div class="circle-wrapper">
+  <!-- SVG with 2 Circles: Inner Orange + Outer Progress -->
+  <svg class="loop-circle" viewBox="0 0 440 440">
+    <!-- Inner Orange Circle (Static) -->
+    <circle cx="220" cy="220" r="100" class="inner-circle" />
+    <!-- Outer Blue Animated Progress Circle -->
+    <circle cx="220" cy="220" r="200" class="animated-circle" />
+  </svg>
 
-    <!-- Center Text -->
-    <div class="circle-center-label">Open Account in 4-Steps</div>
+  <!-- Center Label Text -->
+  <div class="circle-center-label">Open Account in 4-Steps</div>
 
-    <!-- Step Numbers -->
-    <div class="step-number step1">1</div>
-    <div class="step-number step2">2</div>
-    <div class="step-number step3">3</div>
-    <div class="step-number step4">4</div>
+  <!-- Encircled Step Numbers -->
+  <div class="step-number step1">1</div>
+  <div class="step-number step2">2</div>
+  <div class="step-number step3">3</div>
+  <div class="step-number step4">4</div>
 
-    <!-- Step Texts -->
-    <div class="step-text step-text1">Create Your Dartwala Account</div>
-    <div class="step-text step-text2">Complete KYC & Business Details</div>
-    <div class="step-text step-text3">Recharge and Get Onboarded</div>
-    <div class="step-text step-text4">Start Shipping with Us Seamlessly</div>
-  </div>
+  <!-- Step Descriptions -->
+  <div class="step-text step-text1">Create Your Dartwala Account</div>
+  <div class="step-text step-text2">Complete KYC & Business Details</div>
+  <div class="step-text step-text3">Recharge and Get Onboarded</div>
+  <div class="step-text step-text4">Start Shipping with Us Seamlessly</div>
+</div>
 </main>
   <section class="partner-ticker">
     <h2>Our Trusted Courier Network</h2>
