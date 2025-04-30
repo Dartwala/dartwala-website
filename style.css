@@ -207,6 +207,22 @@ footer {
   margin-top: 30px;
   gap: 20px;
 }
+.header-container {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.logo-container {
+  flex: 0 0 auto;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  margin-left: auto; /* Pushes nav to extreme right */
+}
 
 .step-card {
   flex: 1 1 180px;
