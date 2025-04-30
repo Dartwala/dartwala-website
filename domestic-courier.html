@@ -6,74 +6,45 @@
   <title>Domestic Courier Services | Dartwala Express</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <style>
-    .fade-in {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-    .fade-in.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .service-section {
-      max-width: 1200px;
-      margin: 60px auto;
-      padding: 0 20px;
-      line-height: 1.8;
-      font-size: 18px;
-      color: #003366;
-    }
-    .service-section h2 {
-      margin-bottom: 20px;
-      color: #001d3d;
-    }
-    .service-benefits ul {
-      list-style: inside square;
-      margin-top: 10px;
-    }
-    .cta-button {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 14px 28px;
-      background-color: #007bff;
-      color: white;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background-color 0.3s;
-    }
-    .cta-button:hover {
-      background-color: #0056b3;
-    }
-    .process-flow {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      margin-top: 40px;
-    }
-    .process-step {
-      background: #f4f9ff;
-      padding: 20px;
-      margin: 10px;
-      flex: 1 1 200px;
-      border-radius: 10px;
-      text-align: center;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-  </style>
 </head>
 
-<body>
-  <header>
-    <!-- Same header code here (with Company and Services dropdown) -->
-  </header>
-
+<body>  
+<header>
+  <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px;">
+    <a href="index.html">
+      <img src="logo.png" alt="Dartwala Express Logo" class="logo">
+    </a>
+    <nav style="margin-left: auto; display: flex; gap: 30px; align-items: center;">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <div class="dropdown">
+        <a href="services.html" class="dropbtn">Services ▾</a>
+        <div class="dropdown-content">
+          <a href="domestic-courier.html">Domestic</a>
+          <a href="international-courier.html">International</a>
+          <a href="ptl-services.html">PTL (Part Load)</a>
+          <a href="ftl-services.html">FTL (Full Truck)</a>
+          <a href="same-day-delivery.html">Same Day Delivery</a>
+          <a href="next-day-delivery.html">Next Day Delivery</a>
+          <a href="packers-movers.html">Relocation Services</a>
+          <a href="ecommerce-logistics.html">E-Commerce Logistics</a>
+        </div>
+      </div>
+      <a href="contact.html">Contact</a>
+      <a href="#">Client Login</a>
+      <a href="leadership.html" style="font-weight: bold; color: #007bff;">Leadership</a>
+    </nav>
+  </div>
+</header>
+  
   <main>
     <section class="hero fade-in">
       <h1>Fast. Reliable. Human-Centered — Domestic Deliveries Redefined.</h1>
       <p>Moving not just parcels, but trust and business commitments across India.</p>
-      <!-- (Optional) Clipart Placeholder for Hero Image -->
+      <div class="buttons" style="margin-top: 20px; display: flex; gap: 10px; align-items: center;">
+    <a href="quote.html" class="btn primary">Get a Quote</a>
+    <a href="https://wa.me/919136801619" target="_blank" class="btn outline">WhatsApp Us</a>
+    </div>
     </section>
 
     <section class="service-section fade-in">
