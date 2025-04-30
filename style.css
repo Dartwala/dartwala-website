@@ -124,11 +124,6 @@ footer {
   object-fit: contain;
 }
 
-@keyframes tickerMove {
-  0% { transform: translateX(0%); }
-  100% { transform: translateX(-50%); }
-}
-
 /* Scroll to top button */
 #scrollBtn {
   display: none;
@@ -154,31 +149,12 @@ footer {
   transform: scale(1.1);
 }
 
-@keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(0,123,255, 0.7);
-  }
-  70% {
-    box-shadow: 0 0 0 15px rgba(0,123,255, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(0,123,255, 0);
-  }
-}
-
 /* Circle Animation */
 .circle-wrapper {
   position: relative;
   width: 420px;
   height: 420px;
   margin: 40px auto;
-}
-
-.loop-circle {
-  animation: dashLoop 8s linear infinite;
-  stroke-dasharray: 1260;
-  stroke-dashoffset: 1260;
-  stroke-linecap: round;
 }
 
 .animated-circle {
@@ -189,10 +165,6 @@ footer {
   stroke-dashoffset: 1260;
   animation: animateStroke 8s linear infinite;
   stroke-linecap: round;
-}
-
-@keyframes animateStroke {
-  to { stroke-dashoffset: 0; }
 }
 
 /* Step Numbers and Texts */
@@ -241,17 +213,62 @@ footer {
 }
 
 /* Fade-in Animation */
-@keyframes fadeQuarter {
-  0%, 100% { opacity: 1; }
-  24.9%, 25%, 49.9%, 50%, 74.9%, 75% { opacity: 0; }
+.step1, .step-text1 {
+  animation: fadeQuarter 8s linear infinite;
+}
+.step2, .step-text2 {
+  animation: fadeQuarter2 8s linear infinite;
+}
+.step3, .step-text3 {
+  animation: fadeQuarter3 8s linear infinite;
+}
+.step4, .step-text4 {
+  animation: fadeQuarter4 8s linear infinite;
 }
 
-.step1, .step-text1 { animation: fadeQuarter 8s linear infinite; animation-delay: 0s; }
-.step2, .step-text2 { animation: fadeQuarter 8s linear infinite; animation-delay: 2s; }
-.step3, .step-text3 { animation: fadeQuarter 8s linear infinite; animation-delay: 4s; }
-.step4, .step-text4 { animation: fadeQuarter 8s linear infinite; animation-delay: 6s; }
+/* KEYFRAMES */
+@keyframes tickerMove {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0,123,255, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(0,123,255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0,123,255, 0);
+  }
+}
+
+@keyframes animateStroke {
+  to { stroke-dashoffset: 0; }
+}
 
 @keyframes dashLoop {
   0% { stroke-dashoffset: 1260; }
   100% { stroke-dashoffset: 0; }
+}
+
+@keyframes fadeQuarter {
+  0%, 24.99% { opacity: 1; }
+  25%, 100%  { opacity: 0; }
+}
+
+@keyframes fadeQuarter2 {
+  25%, 49.99% { opacity: 1; }
+  0%, 24.99%, 50%, 100% { opacity: 0; }
+}
+
+@keyframes fadeQuarter3 {
+  50%, 74.99% { opacity: 1; }
+  0%, 49.99%, 75%, 100% { opacity: 0; }
+}
+
+@keyframes fadeQuarter4 {
+  75%, 99.99% { opacity: 1; }
+  0%, 74.99%, 100% { opacity: 0; }
 }
