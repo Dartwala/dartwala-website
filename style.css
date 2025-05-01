@@ -307,14 +307,16 @@ footer {
   justify-content: center;
   align-items: center;
   color: #003366;
-  font-weight: bold;
+  font-weight: 700;
   text-align: center;
   padding: 10px;
   font-size: 18px;
   font-family: 'Segoe UI', sans-serif;
   line-height: 1.4;
   letter-spacing: 0.5px;
+  box-shadow: 0 0 15px rgba(255, 165, 0, 0.4);
 }
+
 @media screen and (max-width: 768px) {
   .hero-container {
     flex-direction: column;
@@ -332,5 +334,17 @@ footer {
 
   .hero-animation {
     margin-top: 40px;
+  }
+
+  #canvas-container {
+    width: 300px;
+    height: 300px;
+  }
+
+  .center-circle {
+    width: 120px;
+    height: 120px;
+    font-size: 15px;
+    padding: 8px;
   }
 }
