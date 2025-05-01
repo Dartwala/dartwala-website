@@ -140,7 +140,7 @@ window.onload = function () {
     ctx.stroke();
 
     steps.forEach(step => {
-      if (currentAngle >= step.angle) {
+      if (step.alpha > 0) {
         if (step.alpha < 1) step.alpha += 0.02;
 
         const x = centerX + radius * Math.cos(step.angle);
