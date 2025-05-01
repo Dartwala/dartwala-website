@@ -172,7 +172,13 @@ window.onload = function () {
       }
     });
   }
-
+function getArcTip() {
+  const tipAngle = angle - Math.PI / 2;
+  return {
+    x: centerX + radius * Math.cos(tipAngle),
+    y: centerY + radius * Math.sin(tipAngle)
+  };
+}
   function animate() {
   angle += 0.02;
   if (angle > 2 * Math.PI) {
@@ -182,10 +188,18 @@ window.onload = function () {
 
   // Fade in steps gradually as arc progresses
   steps.forEach(step => {
-    if (angle - Math.PI / 2 >= step.angle - 0.5 && step.alpha < 1) {
-      step.alpha += 0.02;
-    }
-  });
+  const tip = getArcTip();
+  const stepX = centerX + radius * Math.cos(step.angle);
+  const stepY = centerY + radius * Math.sin(step.angle);
+
+  const dx = tip.x - stepX;
+  const dy = tip.y - stepY;
+  const distance = Math.sqrt(dx * dx + dy * dy);
+
+  if (distance < 10 && step.alpha < 1) {
+    step.alpha += 0.02;
+  }
+});
 
   drawProgress(angle);
   requestAnimationFrame(animate);
