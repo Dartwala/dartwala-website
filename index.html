@@ -182,7 +182,7 @@ window.onload = function () {
 
   // Fade in steps gradually as arc progresses
   steps.forEach(step => {
-    if (angle - Math.PI / 2 >= step.angle - 0.15 && step.alpha < 1) {
+    if (angle - Math.PI / 2 >= step.angle - 0.5 && step.alpha < 1) {
       step.alpha += 0.02;
     }
   });
